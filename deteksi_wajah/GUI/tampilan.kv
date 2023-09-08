@@ -30,9 +30,11 @@ ScreenManager:
 
     Screen:
         name: 'main'
+        size: '800dp','480dp'
         MDBoxLayout:
             orientation: 'vertical'
-            padding: ('10dp', '10dp', '10dp', '0dp')
+            padding: ('10dp', '10dp', '10dp', '10dp')
+
             MDCard:
                 size_hint: 1, 4
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
@@ -48,6 +50,7 @@ ScreenManager:
             MDBoxLayout:
                 orientation: 'horizontal'
                 size_hint_y:None
+                padding: ('0dp', '0dp', '0dp', '0dp')
                 MDBoxLayout:
                     orientation:'horizontal'
                     pos_hint: {'center_x': 0.1, 'center_y': 0.5}
@@ -76,7 +79,7 @@ ScreenManager:
                         height: '30dp'
                 MDRaisedButton:
                     pos_hint: {'center_x': 1, 'center_y': 0.2}
-                    text: "Tombol dengan Radius"
+                    text: "Mulai Deteksi"
                     size_hint: None, None
                     md_bg_color: 0.2, 0.4, 0.6, 1  # Warna latar belakang dalam format RGBA (contoh: #FF5733)
                     radius: [20, 20, 20, 20]  # Atur radius sesuai keinginan Anda
@@ -86,31 +89,19 @@ ScreenManager:
         name: 'pose_estimation'
         BoxLayout:
             orientation: 'vertical'
-
+            MyBoxLayout:
+                id: pose_estimation_layout
             MDCard:
-                size_hint: None, None
-                size: "300dp", "200dp"
-                pos_hint: {'center_x': 0.5}
-                elevation: 10
-
-                MDBoxLayout:
+                size_hint: 1, 0.5
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                md_bg_color: 0.2, 0.4, 0.6, 1  # Warna latar belakang dalam format RGBA
+                radius: [10, 10, 10, 10]  # Atur sudut (radius) sesuai keinginan Anda
+                BoxLayout:
                     orientation: 'vertical'
-                    padding: "20dp"
+                    padding: "8dp"
+                    Label:
+                        text: "Ini adalah Card"
+                        size_hint_y: None
+                        height: "30dp"
 
-                    MDLabel:
-                        text: "Welcome to GitHub Desktop"
-                        halign: 'center'
-                        font_size: "20sp"
-
-                    MDRaisedButton:
-                        text: "Sign In"
-                        size_hint: None, None
-                        size: "200dp", "40dp"
-                        pos_hint: {'center_x': 0.5}
-
-                    MDRaisedButton:
-                        text: "Create an Account"
-                        size_hint: None, None
-                        size: "200dp", "40dp"
-                        pos_hint: {'center_x': 0.5}  # Ganti dengan fungsi login yang sesuai
 
