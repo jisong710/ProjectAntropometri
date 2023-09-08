@@ -1,0 +1,118 @@
+#:kivy 2.0.0
+#:import Screen kivy.uix.screenmanager.Screen
+#:import ScreenManager kivy.uix.screenmanager.ScreenManager
+
+
+ScreenManager:
+    id: screen_manager
+    Screen:
+        name: 'splash'
+        size: "800dp", "480dp"
+        BoxLayout:
+            orientation: 'horizontal'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            Image:
+                source: 'logo/download.png'  # Ganti dengan gambar splash screen Anda
+                size_hint_y: None
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                height: '100dp'
+            
+            Image:
+                source: 'logo/download (1).png'  # Ganti dengan gambar splash screen Anda
+                size_hint_y: None
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                height: '100dp'
+            
+            Image:
+                source: 'logo/telyu_horizon.jpg'  # Ganti dengan gambar splash screen Anda
+                size_hint_y: None
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                height: '100dp'
+
+    Screen:
+        name: 'main'
+        size: "800dp", "480dp"
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation:'vertical'
+                MDCard:
+                    size_hint: 1.5, 1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color: 0.2, 0.4, 0.6, 1  # Warna latar belakang dalam format RGBA
+                    radius: [10, 10, 10, 10]  # Atur sudut (radius) sesuai keinginan Anda
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: "8dp"
+                        Label:
+                            text: "Ini adalah Card"
+                            size_hint_y: None
+                            height: "30dp"
+            BoxLayout:
+                orientation:'vertical'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.25}
+                size_hint_y: 0.5
+                MDRaisedButton:
+                    pos_hint: {'center_x': 0.625, 'center_y': 0.5}
+                    text: "Tombol dengan Radius"
+                    size_hint: None, None
+                    md_bg_color: 0.2, 0.4, 0.6, 1  # Warna latar belakang dalam format RGBA (contoh: #FF5733)
+                    radius: [20, 20, 20, 20]  # Atur radius sesuai keinginan Anda
+                    on_release: app.root.current = 'pose_estimation'
+                BoxLayout:
+                    orientation: 'horizontal'
+                    pos_hint: {'center_x': 0.78, 'center_y': .5}
+                    Image:
+                        source: 'logo/download (1).png'  # Ganti dengan gambar splash screen Anda
+                        size_hint_y: None
+                        size_hint_x: None
+                        padding: '10dp'
+                        pos_hint: {'center_x': 0, 'center_y': 0.15}
+                        height: '30dp'
+                    Image:
+                        source: 'logo/telyu_horizon.jpg'  # Ganti dengan gambar splash screen Anda
+                        size_hint_y: None
+                        size_hint_x: None
+                        padding: '10dp'
+                        pos_hint: {'center_x': 1, 'center_y': 0.15}
+                        height: '30dp'
+                    Image:
+                        source: 'logo/download.png'  # Ganti dengan gambar splash screen Anda
+                        size_hint_y: None
+                        size_hint_x: None
+                        pos_hint: {'center_x': 1, 'center_y': 0.15}
+                        height: '50dp'
+
+    Screen:
+        name: 'pose_estimation'
+        size: "800dp", "480dp"
+        BoxLayout:
+            orientation: 'vertical'
+
+            MDCard:
+                size_hint: None, None
+                size: "300dp", "200dp"
+                pos_hint: {'center_x': 0.5}
+                elevation: 10
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    padding: "20dp"
+
+                    MDLabel:
+                        text: "Welcome to GitHub Desktop"
+                        halign: 'center'
+                        font_size: "20sp"
+
+                    MDRaisedButton:
+                        text: "Sign In"
+                        size_hint: None, None
+                        size: "200dp", "40dp"
+                        pos_hint: {'center_x': 0.5}
+
+                    MDRaisedButton:
+                        text: "Create an Account"
+                        size_hint: None, None
+                        size: "200dp", "40dp"
+                        pos_hint: {'center_x': 0.5}  # Ganti dengan fungsi login yang sesuai
+
