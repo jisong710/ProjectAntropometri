@@ -7,7 +7,6 @@ ScreenManager:
     id: screen_manager
     Screen:
         name: 'splash'
-        size: "800dp", "480dp"
         BoxLayout:
             orientation: 'horizontal'
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
@@ -27,15 +26,15 @@ ScreenManager:
                 source: 'logo/telyu_horizon.jpg'  # Ganti dengan gambar splash screen Anda
                 size_hint_y: None
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                height: '100dp'
+                height: '80dp'
 
     Screen:
         name: 'main'
-        size: "800dp", "480dp"
         MDBoxLayout:
             orientation: 'vertical'
+            padding: ('10dp', '10dp', '10dp', '0dp')
             MDCard:
-                size_hint: 1, 2
+                size_hint: 1, 4
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                 md_bg_color: 0.2, 0.4, 0.6, 1  # Warna latar belakang dalam format RGBA
                 radius: [10, 10, 10, 10]  # Atur sudut (radius) sesuai keinginan Anda
@@ -48,6 +47,7 @@ ScreenManager:
                         height: "30dp"
             MDBoxLayout:
                 orientation: 'horizontal'
+                size_hint_y:None
                 MDBoxLayout:
                     orientation:'horizontal'
                     pos_hint: {'center_x': 0.1, 'center_y': 0.5}
@@ -55,6 +55,7 @@ ScreenManager:
                         source: 'logo/download.png'  # Ganti dengan gambar splash screen Anda
                         size_hint_y: None
                         size_hint_x: None
+                        padding: ('5dp', '5dp', '5dp', '5dp')
                         pos_hint: {'center_x': 0.1, 'center_y': 0.2}
                         height: '50dp'
                     
@@ -62,6 +63,7 @@ ScreenManager:
                         source: 'logo/download (1).png'  # Ganti dengan gambar splash screen Anda
                         size_hint_y: None
                         size_hint_x: None
+                        padding: ('5dp', '5dp', '5dp', '5dp')
                         pos_hint: {'center_x': 0.1, 'center_y': 0.2}
                         height: '50dp'
                     
@@ -69,13 +71,19 @@ ScreenManager:
                         source: 'logo/telyu_horizon.jpg'  # Ganti dengan gambar splash screen Anda
                         size_hint_y: None
                         size_hint_x: None
+                        padding: ('5dp', '5dp', '5dp', '5dp')
                         pos_hint: {'center_x': 0.1, 'center_y': 0.2}
-                        height: '50dp'
-
+                        height: '30dp'
+                MDRaisedButton:
+                    pos_hint: {'center_x': 1, 'center_y': 0.2}
+                    text: "Tombol dengan Radius"
+                    size_hint: None, None
+                    md_bg_color: 0.2, 0.4, 0.6, 1  # Warna latar belakang dalam format RGBA (contoh: #FF5733)
+                    radius: [20, 20, 20, 20]  # Atur radius sesuai keinginan Anda
+                    on_release: app.root.current = 'pose_estimation'
 
     Screen:
         name: 'pose_estimation'
-        size: "800dp", "480dp"
         BoxLayout:
             orientation: 'vertical'
 
